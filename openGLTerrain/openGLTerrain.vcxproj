@@ -150,6 +150,10 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ShaderLoader.cpp" />
+    <ClCompile Include="StaticMesh3D.cpp" />
+    <ClCompile Include="StaticMesh3DIndexed.cpp" />
+    <ClCompile Include="HeightMap.cpp" />
+    <ClCompile Include="vertexBufferObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
@@ -159,6 +163,10 @@
     <ClInclude Include="ModelMesh.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="ShaderLoader.h" />
+    <ClInclude Include="StaticMesh3D.h" />
+    <ClInclude Include="StaticMesh3DIndexed.h" />
+    <ClInclude Include="HeightMap.h" />
+    <ClInclude Include="vertexBufferObject.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shaders\cubemap.fs" />
@@ -169,6 +177,8 @@
     <None Include="Resources\Shaders\light.vs" />
     <None Include="Resources\Shaders\reflect.fs" />
     <None Include="Resources\Shaders\reflect.vs" />
+    <None Include="Resources\Shaders\terrain.fs" />
+    <None Include="Resources\Shaders\terrain.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

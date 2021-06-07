@@ -19,6 +19,7 @@
 #include<fstream>
 #include<vector>
 #include<string>
+#include <glm.hpp>
 
 ShaderLoader::ShaderLoader(void){}
 ShaderLoader::~ShaderLoader(void){}
@@ -116,4 +117,99 @@ void ShaderLoader::PrintErrorDetails(bool isShader, GLuint id, const char* name)
 	(isShader == true) ? glGetShaderInfoLog(id, infoLogLength, NULL, &log[0]) : glGetProgramInfoLog(id, infoLogLength, NULL, &log[0]);		
 	std::cout << "Error compiling " << ((isShader == true) ? "shader" : "program") << ": " << name << std::endl;
 	std::cout << &log[0] << std::endl;
+}
+
+
+
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, float* fValues, int iCount)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniform1fv(iLoc, iCount, fValues);
+}
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, const float fValue)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniform1fv(iLoc, 1, &fValue);
+}
+
+// Setting vectors
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, glm::vec2* vVectors, int iCount)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniform2fv(iLoc, iCount, (GLfloat*)vVectors);
+}
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, const glm::vec2 vVector)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniform2fv(iLoc, 1, (GLfloat*)&vVector);
+}
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, glm::vec3* vVectors, int iCount)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniform3fv(iLoc, iCount, (GLfloat*)vVectors);
+}
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, const glm::vec3 vVector)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniform3fv(iLoc, 1, (GLfloat*)&vVector);
+}
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, glm::vec4* vVectors, int iCount)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniform4fv(iLoc, iCount, (GLfloat*)vVectors);
+}
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, const glm::vec4 vVector)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniform4fv(iLoc, 1, (GLfloat*)&vVector);
+}
+
+// Setting 3x3 matrices
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, glm::mat3* mMatrices, int iCount)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniformMatrix3fv(iLoc, iCount, FALSE, (GLfloat*)mMatrices);
+}
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, const glm::mat3 mMatrix)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniformMatrix3fv(iLoc, 1, FALSE, (GLfloat*)&mMatrix);
+}
+
+// Setting 4x4 matrices
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, glm::mat4* mMatrices, int iCount)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniformMatrix4fv(iLoc, iCount, FALSE, (GLfloat*)mMatrices);
+}
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, const glm::mat4 mMatrix)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniformMatrix4fv(iLoc, 1, FALSE, (GLfloat*)&mMatrix);
+}
+
+// Setting integers
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, int* iValues, int iCount)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniform1iv(iLoc, iCount, iValues);
+}
+
+void ShaderLoader::SetUniform(GLuint program, std::string sName, const int iValue)
+{
+	int iLoc = glGetUniformLocation(program, sName.c_str());
+	glUniform1i(iLoc, iValue);
 }

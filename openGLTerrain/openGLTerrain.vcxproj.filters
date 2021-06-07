@@ -33,6 +33,18 @@
     <ClCompile Include="Cubemap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HeightMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMesh3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMesh3DIndexed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexBufferObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -54,6 +66,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Cubemap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HeightMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticMesh3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticMesh3DIndexed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vertexBufferObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -80,6 +104,12 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Resources\Shaders\fog.vs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Shaders\terrain.fs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Resources\Shaders\terrain.vs">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
